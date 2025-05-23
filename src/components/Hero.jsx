@@ -21,23 +21,25 @@ const Hero = () => {
 
   return (
     <section className="bg-purple-100 py-6 rounded-xl relative">
-      <div className="w-[1200px] m-auto relative overflow-hidden rounded-xl">
+      <div className="w-full max-w-screen-xl mx-auto relative overflow-hidden rounded-xl px-4 sm:px-6 lg:px-8">
         <img
           src={images[current]}
           alt={`Slide ${current + 1}`}
-          className="w-full h-[600px] object-cover rounded-xl transition-all duration-500"
+          className="w-full h-60 sm:h-80 md:h-[450px] lg:h-[600px] object-cover rounded-xl transition-all duration-500"
         />
 
         <button
           onClick={prevSlide}
-          className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100"
+          className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100"
+          aria-label="Previous Slide"
         >
           <ChevronLeft size={24} />
         </button>
 
         <button
           onClick={nextSlide}
-          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100"
+          className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100"
+          aria-label="Next Slide"
         >
           <ChevronRight size={24} />
         </button>

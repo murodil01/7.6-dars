@@ -57,6 +57,7 @@ const ProductList = () => {
 
   useEffect(() => {
     if (observerRef.current) observerRef.current.disconnect();
+
     const observer = new IntersectionObserver(
       (entries) => {
         if (
@@ -79,7 +80,7 @@ const ProductList = () => {
   const totalPages = Math.ceil(filteredProducts.length / pageSize);
 
   return (
-    <div className="w-[1200px] m-auto mt-10 flex gap-6">
+    <div className="max-w-[1200px] w-full m-auto mt-10 flex flex-col lg:flex-row gap-6 px-4">
       <Sidebar
         priceRange={priceRange}
         setPriceRange={setPriceRange}
@@ -87,13 +88,13 @@ const ProductList = () => {
         maxLimit={maxLimit}
       />
 
-      <main className="flex-1 grid grid-cols-4 gap-6">
+      <main className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {loading ? (
-          <p className="col-span-4 text-center text-lg font-semibold">
+          <p className="col-span-full text-center text-lg font-semibold">
             Yuklanmoqda...
           </p>
         ) : filteredProducts.length === 0 ? (
-          <p className="col-span-4 text-center text-lg font-semibold">
+          <p className="col-span-full text-center text-lg font-semibold">
             Tanlangan narx oralig'ida mahsulot topilmadi.
           </p>
         ) : (
@@ -154,18 +155,17 @@ const ProductList = () => {
               </div>
             ))}
 
-            <div className="col-span-4 mt-6 flex justify-between items-center gap-4">
+            <div className="col-span-full mt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
               {visibleCount < filteredProducts.length && (
                 <button
                   onClick={loadMore}
                   className="py-2 px-4 bg-purple-700 text-white rounded hover:bg-purple-800 transition"
-                  style={{ color: "white" }}
                 >
                   Ko'proq mahsulot
                 </button>
               )}
 
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap justify-center sm:justify-start">
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map(
                   (num) => (
                     <button
@@ -188,7 +188,7 @@ const ProductList = () => {
             </div>
 
             {visibleCount < filteredProducts.length && (
-              <div id="scroll-trigger" className="col-span-4 h-10"></div>
+              <div id="scroll-trigger" className="col-span-full h-10"></div>
             )}
           </>
         )}

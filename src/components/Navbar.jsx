@@ -15,40 +15,40 @@ const { Search: SearchInput } = Input;
 
 const Navbar = () => {
   return (
-    <header className="w-full bg-white shadow-sm ">
+    <header className="w-full bg-white shadow-sm">
       <div className="bg-gray-100 text-sm text-gray-700 flex justify-center">
-        <div className="w-[1200px] py-2 flex items-center justify-between">
-          <div className="flex gap-4 items-center">
-            <a className="flex gap-1 items-center cursor-pointer hover:text-blue-600 text-[14px]">
+        <div className="w-full max-w-screen-xl mx-auto py-2 flex flex-wrap items-center justify-between px-4 sm:px-6 lg:px-8 gap-3">
+          <div className="flex flex-wrap gap-4 items-center">
+            <a className="flex gap-1 items-center cursor-pointer hover:text-blue-600 text-[14px] whitespace-nowrap">
               <MapPin size={16} />
               Toshkent
               <ChevronDown size={16} />
             </a>
-            <a href="#" className="hover:text-blue-600 text-[14px]">
+            <a href="#" className="hover:text-blue-600 text-[14px] whitespace-nowrap">
               Topshirish punktlari
             </a>
           </div>
 
-          <div className="flex gap-4 items-center">
+          <div className="flex flex-wrap gap-4 items-center">
             <a
               href="#"
-              className="text-[14px] text-blue-500 hover:text-blue-700 border-r-2 pr-2 border-b-gray-600"
+              className="text-[14px] text-blue-500 hover:text-blue-700 border-r-2 pr-2 border-b-gray-600 whitespace-nowrap"
             >
               Sotuvchi bo'lish
             </a>
             <a
               href="#"
-              className="text-[14px] text-blue-500 hover:text-blue-700 border-r-2 pr-2 border-b-gray-600"
+              className="text-[14px] text-blue-500 hover:text-blue-700 border-r-2 pr-2 border-b-gray-600 whitespace-nowrap"
             >
               Topshirish punktini ochish
             </a>
-            <a href="#" className="text-[14px] hover:text-blue-600">
+            <a href="#" className="text-[14px] hover:text-blue-600 whitespace-nowrap">
               Savol-javob
             </a>
-            <a href="#" className="text-[14px] hover:text-blue-600">
+            <a href="#" className="text-[14px] hover:text-blue-600 whitespace-nowrap">
               Buyurtmalarim
             </a>
-            <select className="border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none">
+            <select className="border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none whitespace-nowrap">
               <option value="uz">O'zbekcha</option>
               <option value="en">English</option>
               <option value="ru">Русский</option>
@@ -57,20 +57,21 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="flex justify-center py-4 bg-white">
-        <div className="w-[1200px] flex items-center gap-6">
+      {/* Main navbar */}
+      <div className="flex justify-center py-4 bg-white border-b border-gray-200">
+        <div className="w-full max-w-screen-xl mx-auto flex flex-wrap items-center gap-6 px-4 sm:px-6 lg:px-8">
           <img
             src={logo}
             alt="logo"
-            className="w-[145px] h-[45px] object-contain"
+            className="w-[145px] h-[45px] object-contain flex-shrink-0"
           />
 
-          <button className="flex items-center gap-2 px-4 py-2 bg-gray-200 text-[16px] rounded-lg text-fuchsia-900 hover:bg-gray-300 transition-all">
+          <button className="flex items-center gap-2 px-4 py-2 bg-gray-200 text-[16px] rounded-lg text-fuchsia-900 hover:bg-gray-300 transition-all whitespace-nowrap">
             <Rows4 />
             Katalog
           </button>
 
-          <div className="flex-1">
+          <div className="flex-1 min-w-[200px]">
             <SearchInput
               placeholder="Mahsulotlar va turkumlar izlash"
               enterButton={<Search size={20} />}
@@ -79,7 +80,7 @@ const Navbar = () => {
             />
           </div>
 
-          <div className="flex gap-4 items-center">
+          <div className="flex flex-wrap gap-4 items-center whitespace-nowrap">
             <a href="#" className="flex items-center gap-2 hover:text-blue-600">
               <User size={20} />
               Kirish
@@ -96,8 +97,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="w-[1200px] m-auto">
-        <ul className="flex flex-wrap items-center justify-between gap-4 text-sm text-gray-700 font-medium">
+      <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+        <ul className="flex flex-nowrap items-center gap-6 text-sm text-gray-700 font-medium whitespace-nowrap">
           <li>
             <a
               href="#"

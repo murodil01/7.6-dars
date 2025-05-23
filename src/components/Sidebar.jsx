@@ -2,7 +2,6 @@ import React from "react";
 import { Slider } from "antd";
 
 const Sidebar = ({ priceRange, setPriceRange, minLimit, maxLimit }) => {
-
   const onChange = (value) => {
     setPriceRange(value);
   };
