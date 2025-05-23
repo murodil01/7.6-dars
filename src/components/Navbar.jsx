@@ -57,8 +57,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Main navbar */}
-      <div className="flex justify-center py-4 bg-white border-b border-gray-200">
+      <div className="flex justify-center py-4 bg-white ">
         <div className="w-full max-w-screen-xl mx-auto flex flex-wrap items-center gap-6 px-4 sm:px-6 lg:px-8">
           <img
             src={logo}
